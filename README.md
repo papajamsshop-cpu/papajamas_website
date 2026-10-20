@@ -66,12 +66,36 @@ website AI/
 > Remplacer par le vrai stock et les vrais liens (Instagram, Discogs) avant mise en ligne.
 > Le panier et le checkout sont **démo** : aucun paiement n'est traité — brancher Stripe/PayPal plus tard.
 
-## Git
+## Git & déploiement (Orkestr)
+
+Le site vit sur **[Orkestr](https://orkestr.eu)** (hébergement EU), projet `papajamas-website`.
 
 ```bash
+# --- 1er déploiement (une seule fois) ---
+orkestr login          # connexion via navigateur (une fois)
+orkestr init --yes     # crée le projet à partir du remote git
+orkestr deploy .       # build + met en ligne, imprime l'URL
+
+# --- après CHAQUE modification (workflow normal) ---
 git add -A
 git commit -m "message"
-git push origin main
+git push               # → l'auto-deploy redéploie le site tout seul
 ```
 
-Dépôt distant : `https://github.com/papajamsshop-cpu/papajamas_website.git`
+### Rollback (« reviens en arrière »)
+
+Revenir à la version juste **avant** une série de modifs, puis republier :
+
+```bash
+git log --oneline              # repérer le commit où ça va bien
+git revert --no-edit HEAD       # annule LA dernière modif (ou : git revert A..B)
+git push                       # → redéploiement automatique
+# si l'auto-deploy n'est pas actif :
+orkestr deploy .
+```
+
+* `git revert <sha>` = annule un commit précis ; `git revert A..B` = annule une série.
+* L'historique git n'est jamais réécrit (pas de force push).
+* Vérif des déploiements : `orkestr deployments list` · rollback natif (plan Pro) : `orkestr deployments rollback <id>`.
+
+> `.orkestr/config.json` est local et **gitignoré** (ne jamais le committer).
