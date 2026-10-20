@@ -27,7 +27,7 @@ window.PAPA_I18N = {
     "nav.cart": "Cart",
 
     "hero.kicker": "Record store · Label · Distribution",
-    "hero.title": "Vinyl, second&nbsp;hand<br />&amp; our own label.",
+    "hero.title": "The House of Gems",
     "hero.lead": "800+ references on the racks, a curated Discogs store, 30 distributed labels and 1–2 new releases every month. Picked by hand, played in the shop first.",
     "hero.cta1": "Browse the shop",
     "hero.cta2": "About the store",
@@ -142,7 +142,7 @@ window.PAPA_I18N = {
     "nav.cart": "Carrito",
 
     "hero.kicker": "Tienda de discos · Sello · Distribución",
-    "hero.title": "Vinilo, segunda&nbsp;mano<br />&amp; nuestro propio sello.",
+    "hero.title": "The House of Gems",
     "hero.lead": "Más de 800 referencias en el tendedero, una tienda en Discogs muy cuidada, 30 sellos distribuidos y 1–2 novedades cada mes. Elegidas a mano y sonando en tienda antes que nada.",
     "hero.cta1": "Ver la tienda",
     "hero.cta2": "Sobre la tienda",
@@ -257,7 +257,7 @@ window.PAPA_I18N = {
     "nav.cart": "Panier",
 
     "hero.kicker": "Disquaire · Label · Distribution",
-    "hero.title": "Du vinyle, d'occasion<br />&amp; notre propre label.",
+    "hero.title": "The House of Gems",
     "hero.lead": "Plus de 800 références en rayon, une boutique Discogs triée sur le volet, 30 labels distribués et 1–2 nouveautés chaque mois. Choisis à la main, testés en boutique d'abord.",
     "hero.cta1": "Voir la boutique",
     "hero.cta2": "À propos",
