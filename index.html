@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PAPA JAMS — Record store, label &amp; distribution</title>
+  <meta name="description" content="PAPA JAMS — independent record store: second-hand vinyl, new releases, pre-orders, distribution and merch. Worldwide shipping." />
+  <link rel="icon" href="assets/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@400;500;700&family=Fraunces:opsz,wght@9..144,400;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body id="top">
+
+  <!-- ======================= TOP BAR ======================= -->
+  <div class="topbar">
+    <div class="content topbar__inner">
+      <span class="topbar__msg" data-i18n="topbar.left">800+ second-hand records in store</span>
+      <div class="topbar__right">
+        <span class="topbar__msg topbar__ship" data-i18n="topbar.right">Worldwide shipping via Packlink</span>
+        <div class="lang" role="group" aria-label="Language">
+          <button class="lang__btn is-active" data-lang="en" type="button">EN</button>
+          <button class="lang__btn" data-lang="es" type="button">ES</button>
+          <button class="lang__btn" data-lang="fr" type="button">FR</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================= HEADER ======================= -->
+  <header class="header">
+    <div class="content header__inner">
+      <a class="brand" href="#top" aria-label="PAPA JAMS — home">
+        <img class="brand__mark" src="assets/logo.png" alt="" width="36" height="36" />
+        <span class="brand__name">PAPA&nbsp;JAMS</span>
+      </a>
+
+      <nav class="menu" id="menu">
+        <a class="menu__link" href="#top" data-i18n="nav.home">Home</a>
+
+        <div class="dropdown" id="ddShop">
+          <button class="menu__link menu__toggle" type="button" aria-expanded="false">
+            <span data-i18n="nav.shop">Shop</span>
+            <i class="caret" aria-hidden="true"></i>
+          </button>
+          <div class="dropdown__menu">
+            <a href="#novedades" data-i18n="nav.new">New arrivals</a>
+            <a href="#segunda-mano" data-i18n="nav.used">Second hand</a>
+            <a href="#preventas" data-i18n="nav.preorder">Pre-orders</a>
+            <a href="#distribucion" data-i18n="nav.dist">Distribution</a>
+            <a href="#merch" data-i18n="nav.merch">Merch</a>
+          </div>
+        </div>
+
+        <a class="menu__link" href="#preventas" data-i18n="nav.preorders">Pre-orders</a>
+        <a class="menu__link" href="#distribucion" data-i18n="nav.distribution">Distribution</a>
+        <a class="menu__link" href="#about" data-i18n="nav.about">About us</a>
+        <a class="menu__link" href="#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+
+      <div class="header__actions">
+        <button class="icon-btn" id="searchBtn" type="button">
+          <svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><circle cx="9" cy="9" r="6" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M13.5 13.5 17.5 17.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          <span class="icon-btn__label" data-i18n="nav.search">Search</span>
+        </button>
+        <button class="icon-btn icon-btn--account" id="accountBtn" type="button">
+          <span class="icon-btn__label" data-i18n="nav.account">Account</span>
+        </button>
+        <button class="icon-btn icon-btn--cart" id="cartBtn" type="button">
+          <span data-i18n="nav.cart">Cart</span>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ======================= HERO ======================= -->
+    <section class="hero">
+      <div class="content hero__inner">
+        <div class="hero__text">
+          <p class="kicker" data-i18n="hero.kicker">Record store · Label · Distribution</p>
+          <h1 class="hero__title" data-i18n-html="hero.title">Vinyl, second&nbsp;hand<br />&amp; our own label.</h1>
+          <p class="hero__lead" data-i18n="hero.lead">
+            800+ references on the racks, a curated Discogs store, 30 distributed labels and 1–2 new releases every month. Picked by hand, played in the shop first.
+          </p>
+          <div class="hero__cta">
+            <a class="btn btn--solid" href="#novedades" data-i18n="hero.cta1">Browse the shop</a>
+            <a class="btn btn--ghost" href="#about" data-i18n="hero.cta2">About the store</a>
+          </div>
+          <ul class="stats">
+            <li><strong>800+</strong><span data-i18n="hero.s1">Refs in store</span></li>
+            <li><strong>250+</strong><span data-i18n="hero.s2">On Discogs</span></li>
+            <li><strong>30</strong><span data-i18n="hero.s3">Distributed labels</span></li>
+            <li><strong>1–2</strong><span data-i18n="hero.s4">New refs / month</span></li>
+          </ul>
+        </div>
+        <div class="hero__visual">
+          <img src="assets/emblem-dark.jpg" alt="PAPA JAMS emblem" loading="eager" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= NEW ARRIVALS ======================= -->
+    <section class="collection" id="novedades">
+      <div class="content">
+        <div class="sec-head">
+          <div>
+            <h2 data-i18n="sec.new.title">New arrivals</h2>
+            <p class="sec-desc" data-i18n="sec.new.desc">Label releases &amp; distributed records — 1–2 new references every month.</p>
+          </div>
+          <button class="btn-more" type="button" data-more="novedades" data-i18n="sec.more">See more</button>
+        </div>
+        <div class="entries" data-grid="novedades"></div>
+      </div>
+    </section>
+
+    <!-- ======================= SECOND HAND ======================= -->
+    <section class="collection" id="segunda-mano">
+      <div class="content">
+        <div class="sec-head">
+          <div>
+            <h2 data-i18n="sec.used.title">Second hand</h2>
+            <p class="sec-desc" data-i18n="sec.used.desc">Around 800 references in the shop and 250+ on Discogs, added every day.</p>
+          </div>
+          <button class="btn-more" type="button" data-more="segunda-mano" data-i18n="sec.more">See more</button>
+        </div>
+        <div class="entries" data-grid="segunda-mano"></div>
+      </div>
+    </section>
+
+    <!-- ======================= PRE-ORDERS ======================= -->
+    <section class="collection" id="preventas">
+      <div class="content">
+        <div class="sec-head">
+          <div>
+            <h2 data-i18n="sec.pre.title">Pre-orders</h2>
+            <p class="sec-desc" data-i18n="sec.pre.desc">Reserve before street date — we ship everything in one parcel.</p>
+          </div>
+          <button class="btn-more" type="button" data-more="preventas" data-i18n="sec.more">See more</button>
+        </div>
+        <div class="entries" data-grid="preventas"></div>
+      </div>
+    </section>
+
+    <!-- ======================= DISTRIBUTION ======================= -->
+    <section class="collection" id="distribucion">
+      <div class="content">
+        <div class="sec-head">
+          <div>
+            <h2 data-i18n="sec.dist.title">Distribution &amp; label</h2>
+            <p class="sec-desc" data-i18n="sec.dist.desc">30 references currently in stock — Papa Jams records and titles we distribute.</p>
+          </div>
+          <button class="btn-more" type="button" data-more="distribucion" data-i18n="sec.more">See more</button>
+        </div>
+        <div class="entries" data-grid="distribucion"></div>
+      </div>
+    </section>
+
+    <!-- ======================= MERCH ======================= -->
+    <section class="collection" id="merch">
+      <div class="content">
+        <div class="sec-head">
+          <div>
+            <h2 data-i18n="sec.merch.title">Merch</h2>
+            <p class="sec-desc" data-i18n="sec.merch.desc">T-shirt designs in sizes S–XXL, printed in small batches.</p>
+          </div>
+          <button class="btn-more" type="button" data-more="merch" data-i18n="sec.more">See more</button>
+        </div>
+        <div class="entries entries--merch" data-grid="merch"></div>
+      </div>
+    </section>
+
+    <!-- ======================= INFO BAND ======================= -->
+    <section class="info">
+      <div class="content info__grid">
+        <article class="info__card">
+          <span class="info__num">01</span>
+          <h3 data-i18n="info.ship.title">Shipping worldwide</h3>
+          <p data-i18n="info.ship.text">We ship through Packlink, a multi-carrier broker. Rates calculated at checkout, tracked and insured.</p>
+          <p class="info__tags" data-i18n="info.ship.tags">Europe · USA · Canada · Mexico · Brazil · Argentina · Uruguay · Colombia · Australia · Japan · China</p>
+        </article>
+        <article class="info__card">
+          <span class="info__num">02</span>
+          <h3 data-i18n="info.pay.title">Payment</h3>
+          <p data-i18n="info.pay.text">Card terminal (Visa / Mastercard), PayPal and bank transfer. Cash accepted in the physical store.</p>
+          <p class="info__tags" data-i18n="info.pay.tags">VAT included · Secure checkout · Invoiced by our SL</p>
+        </article>
+        <article class="info__card">
+          <span class="info__num">03</span>
+          <h3 data-i18n="info.b2b.title">Wholesale &amp; shops</h3>
+          <p data-i18n="info.b2b.text">We supply record shops with 1–2 B2B orders per month (€150–€1,000). Ask for the trade price list.</p>
+          <p class="info__tags" data-i18n="info.b2b.tags">Trade accounts · Shop distribution · Restock alerts</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ======================= ABOUT ======================= -->
+    <section class="about" id="about">
+      <div class="content about__inner">
+        <div class="about__visual">
+          <img src="assets/emblem-light.jpg" alt="PAPA JAMS" loading="lazy" />
+        </div>
+        <div class="about__text">
+          <p class="kicker" data-i18n="about.kicker">About us</p>
+          <h2 data-i18n-html="about.title">A record shop that<br />puts out records too.</h2>
+          <p data-i18n="about.p1">
+            PAPA JAMS started as a pile of crates and a tape machine that never stopped. Today the shop holds more than 800 second-hand references, a Discogs store that grows every day, and a label pressing small runs.
+          </p>
+          <p data-i18n="about.p2">
+            Everything is graded by hand, played before it goes on the rack, and packed the same day. If you are looking for a specific pressing, ask — chances are it is behind the counter.
+          </p>
+          <div class="about__cta">
+            <a class="btn btn--solid" href="#contact" data-i18n="about.cta">Get in touch</a>
+            <a class="btn btn--ghost" href="#novedades" data-i18n="about.cta2">See the stock</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= SUBSCRIBE ======================= -->
+    <section class="subscribe" id="contact">
+      <div class="content subscribe__inner">
+        <div class="subscribe__text">
+          <h2 data-i18n="news.title">Subscribe</h2>
+          <p data-i18n="news.text">One email a month: new arrivals, restocks and pre-orders. No spam, ever.</p>
+        </div>
+        <form class="subscribe__form" id="newsletter" novalidate>
+          <input type="email" id="email" name="email" data-i18n-attr="placeholder:news.placeholder, aria-label:news.placeholder" placeholder="your@email.com" required />
+          <button class="btn btn--solid btn--accent" type="submit" data-i18n="news.button">Subscribe</button>
+          <p class="form-msg" id="formMsg" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======================= FOOTER ======================= -->
+  <footer class="footer">
+    <div class="content footer__inner">
+      <div class="footer__brand">
+        <img class="brand__mark" src="assets/logo.png" alt="" width="42" height="42" />
+        <p class="footer__tag" data-i18n="footer.tag">Independent record store, label &amp; distribution.</p>
+        <ul class="footer__social">
+          <li><a href="#" data-i18n="footer.instagram">Instagram</a></li>
+          <li><a href="#" data-i18n="footer.discogs">Discogs</a></li>
+          <li><a href="#" data-i18n="footer.bandcamp">Bandcamp</a></li>
+        </ul>
+      </div>
+
+      <nav class="footer__col">
+        <h4 data-i18n="footer.shop">Shop</h4>
+        <a href="#novedades" data-i18n="nav.new">New arrivals</a>
+        <a href="#segunda-mano" data-i18n="nav.used">Second hand</a>
+        <a href="#preventas" data-i18n="nav.preorder">Pre-orders</a>
+        <a href="#distribucion" data-i18n="nav.dist">Distribution</a>
+        <a href="#merch" data-i18n="nav.merch">Merch</a>
+      </nav>
+
+      <nav class="footer__col">
+        <h4 data-i18n="footer.help">Help</h4>
+        <a href="#" data-i18n="footer.shipping">Shipping &amp; returns</a>
+        <a href="#" data-i18n="footer.payments">Payment methods</a>
+        <a href="#" data-i18n="footer.grading">Vinyl grading</a>
+        <a href="#" data-i18n="footer.wholesale">Wholesale</a>
+        <a href="#contact" data-i18n="footer.contact">Contact</a>
+      </nav>
+
+      <nav class="footer__col">
+        <h4 data-i18n="footer.legal">Legal</h4>
+        <a href="#" data-i18n="footer.terms">Terms &amp; conditions</a>
+        <a href="#" data-i18n="footer.privacy">Privacy policy</a>
+        <a href="#" data-i18n="footer.cookies">Cookies</a>
+        <a href="#" data-i18n="footer.notice">Legal notice</a>
+      </nav>
+    </div>
+    <div class="content footer__bottom">
+      <p>© 2026 PAPA JAMS — <span data-i18n="footer.rights">All rights reserved.</span></p>
+      <p class="footer__note" data-i18n="footer.note">Demo store — products and prices are placeholders.</p>
+    </div>
+  </footer>
+
+  <!-- ======================= SEARCH OVERLAY ======================= -->
+  <div class="overlay" id="searchOverlay" hidden>
+    <div class="overlay__panel">
+      <div class="overlay__head">
+        <input type="search" id="searchInput" data-i18n-attr="placeholder:search.placeholder, aria-label:search.placeholder" placeholder="Search artist, title, label…" autocomplete="off" />
+        <button class="overlay__close" id="searchClose" type="button" aria-label="Close">✕</button>
+      </div>
+      <div class="overlay__results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <!-- ======================= CART DRAWER ======================= -->
+  <div class="drawer-backdrop" id="cartBackdrop" hidden></div>
+  <aside class="drawer" id="cartDrawer" aria-hidden="true">
+    <div class="drawer__head">
+      <h3 data-i18n="cart.title">Your cart</h3>
+      <button class="overlay__close" id="cartClose" type="button" aria-label="Close">✕</button>
+    </div>
+    <div class="drawer__body" id="cartItems"></div>
+    <div class="drawer__foot">
+      <div class="drawer__total">
+        <span data-i18n="cart.total">Total</span>
+        <strong id="cartTotal">€0.00</strong>
+      </div>
+      <button class="btn btn--solid btn--accent btn--block" id="checkoutBtn" type="button" data-i18n="cart.checkout">Checkout</button>
+      <p class="drawer__hint" data-i18n="cart.hint">Demo checkout — no payment is processed.</p>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/catalog.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
