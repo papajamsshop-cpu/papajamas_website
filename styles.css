@@ -334,7 +334,7 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 400; letter-spacing: -
 .tile__badge--new { background: var(--green); }
 .tile__badge--used { background: var(--yellow); }
 .tile__badge--preorder { background: var(--cyan); }
-.tile__badge--dist { background: var(--magenta); color: var(--light); }
+.tile__badge--dist { background: var(--magenta); color: var(--dark); }
 .tile__badge--sold { background: var(--dark); color: var(--light); }
 
 .tile__row {
@@ -466,7 +466,7 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 400; letter-spacing: -
 .footer__social a:hover { color: var(--green); }
 
 .footer__col { display: flex; flex-direction: column; gap: 11px; }
-.footer__col h4 {
+.footer__col h3 {
   font-family: var(--font-sans);
   font-size: 12px;
   text-transform: uppercase;

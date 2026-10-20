@@ -182,7 +182,7 @@
     var isMerch = item.sizes && item.sizes.length;
     var h = '<article class="tile" data-id="' + item.id + '">';
 
-    h += '<a class="tile__artwork" href="#' + item.section + '" aria-label="' + esc(item.artist + " — " + item.title) + '">';
+    h += '<a class="tile__artwork" href="#' + item.section + '" aria-label="' + esc(t(badge.key) + " — " + item.artist + " — " + item.title) + '">';
     h += '<img src="' + coverOf(item) + '" alt="' + esc(item.artist + " — " + item.title) + '" loading="lazy" />';
     h += '<span class="tile__badge tile__badge--' + badge.cls + '">' + t(badge.key) + "</span></a>";
 
@@ -367,8 +367,12 @@
      UI : menús, cajón, overlay
      --------------------------------------------------------- */
   function openDrawer(open) {
-    document.getElementById("cartDrawer").classList.toggle("is-open", open);
-    document.getElementById("cartDrawer").setAttribute("aria-hidden", String(!open));
+    var drawer = document.getElementById("cartDrawer");
+    drawer.classList.toggle("is-open", open);
+    drawer.setAttribute("aria-hidden", String(!open));
+    /* inert : le tiroir fermé ne doit pas être atteignable au clavier */
+    if (open) drawer.removeAttribute("inert");
+    else drawer.setAttribute("inert", "");
     document.getElementById("cartBackdrop").hidden = !open;
   }
 
