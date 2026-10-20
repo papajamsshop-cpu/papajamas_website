@@ -68,19 +68,27 @@ website AI/
 
 ## Git & déploiement (Orkestr)
 
-Le site vit sur **[Orkestr](https://orkestr.eu)** (hébergement EU), projet `papajamas-website`.
+Le site vit sur **[Orkestr](https://orkestr.eu)** (hébergement EU).
+
+| | |
+|---|---|
+| Projet | `papajams` (Papajamas Website) |
+| URL live | **https://papajams.orkestr.run/** |
+| Repo | github.com/papajamsshop-cpu/papajamas_website (branche `main`) |
+| Auto-deploy | **actif** — chaque push redéploie le site (webhook) |
 
 ```bash
-# --- 1er déploiement (une seule fois) ---
-orkestr login          # connexion via navigateur (une fois)
-orkestr init --yes     # crée le projet à partir du remote git
-orkestr deploy .       # build + met en ligne, imprime l'URL
-
 # --- après CHAQUE modification (workflow normal) ---
 git add -A
 git commit -m "message"
-git push               # → l'auto-deploy redéploie le site tout seul
+git push               # → le webhook redéploie le site automatiquement (~1 min)
+
+# --- déploiement manuel (si besoin) ---
+orkestr deploy papajams
 ```
+
+Voir les déploiements : `orkestr deployments list papajams`
+(`live` = en ligne, `superseded` = remplacé, `webhook` = déclenché par le push).
 
 ### Rollback (« reviens en arrière »)
 
@@ -89,13 +97,9 @@ Revenir à la version juste **avant** une série de modifs, puis republier :
 ```bash
 git log --oneline              # repérer le commit où ça va bien
 git revert --no-edit HEAD       # annule LA dernière modif (ou : git revert A..B)
-git push                       # → redéploiement automatique
-# si l'auto-deploy n'est pas actif :
-orkestr deploy .
+git push                       # → redéploiement automatique de l'ancienne version
 ```
 
 * `git revert <sha>` = annule un commit précis ; `git revert A..B` = annule une série.
 * L'historique git n'est jamais réécrit (pas de force push).
-* Vérif des déploiements : `orkestr deployments list` · rollback natif (plan Pro) : `orkestr deployments rollback <id>`.
-
-> `.orkestr/config.json` est local et **gitignoré** (ne jamais le committer).
+* Plan free : le rollback natif Orkestr (`orkestr deployments rollback`) est réservé au plan Pro — le flux git revert ci-dessus a exactement le même effet.
